@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arithmetic Sequence Quiz Game</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f8ff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      background-color: #dceeff;
+      border-radius: 15px;
+      padding: 30px;
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    .question {
+      font-size: 18px;
+      margin: 20px 0;
+    }
+
+    input[type="number"] {
+      padding: 8px;
+      font-size: 16px;
+      width: 150px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .feedback {
+      font-size: 18px;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .image {
+      width: 100%;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Find the Sum of the Arithmetic Sequence!</h1>
+
+    <div class="question" id="q1">
+      <p><strong>Problem 1:</strong> What is the sum of the first 15 terms if<br> \( a₁ = 12 \) and \( a₁₅ = 40 \)?</p>
+      <input type="number" id="answer1" placeholder="Enter your answer">
+      <button onclick="checkAnswer1()">Submit</button>
+      <div class="feedback" id="feedback1"></div>
+    </div>
+
+    <div class="question" id="q2">
+      <p><strong>Problem 2:</strong> What is the sum of the first 10 terms if<br> \( a₁ = 8 \) and \( a₁₀ = 35 \)?</p>
+      <input type="number" id="answer2" placeholder="Enter your answer">
+      <button onclick="checkAnswer2()">Submit</button>
+      <div class="feedback" id="feedback2"></div>
+    </div>
+
+    <img src="Screenshot 2025-10-19 214701.png" alt="AS Problem Image" class="image">
+  </div>
+
+  <script>
+    function checkAnswer1() {
+      const userAnswer = parseInt(document.getElementById("answer1").value);
+      const correctAnswer = (15 / 2) * (12 + 40); // S₁₅ = 15/2 * (12 + 40) = 15/2 * 52 = 390
+      const feedback = document.getElementById("feedback1");
+
+      if (userAnswer === correctAnswer) {
+        feedback.textContent = "✅ Correct! Well done.";
+        feedback.style.color = "green";
+      } else {
+        feedback.textContent = `❌ Incorrect. Try again!`;
+        feedback.style.color = "red";
+      }
+    }
+
+    function checkAnswer2() {
+      const userAnswer = parseInt(document.getElementById("answer2").value);
+      const correctAnswer = (10 / 2) * (8 + 35); // S₁₀ = 10/2 * (8 + 35) = 5 * 43 = 215
+      const feedback = document.getElementById("feedback2");
+
+      if (userAnswer === correctAnswer) {
+        feedback.textContent = "✅ Correct! Great job.";
+        feedback.style.color = "green";
+      } else {
+        feedback.textContent = `❌ Incorrect. Keep trying!`;
+        feedback.style.color = "red";
+      }
+    }
+  </script>
+
+</body>
+</html>
